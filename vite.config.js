@@ -39,11 +39,4 @@ export default defineConfig({
             target: 'es2020',
         },
     },
-    build: {
-        outDir: 'public/build',
-        manifest: true,
-        rollupOptions: {
-            input: 'resources/js/main.jsx',
-        },
-    },
 });

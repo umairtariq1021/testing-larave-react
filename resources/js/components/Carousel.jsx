@@ -1,37 +1,36 @@
 import React from 'react'
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { arr } from "../assets/imageExport"
 
+const settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 600,
+    autoplaySpeed: 4000,
+    adaptiveHeight: false,
+    cssEase: "ease-in-out",
+    dots: true,
+    arrows: true,
+};
 
 const Carousel = () => {
-    var settings = {
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 3000,
-        autoplaySpeed: 3000,
-        adaptiveHeight: true,
-        cssEase: "ease-in"
-    };
     return (
-        <div className='max-w-[90%] mx-auto'>
+        <div className="w-full max-w-[95%] mx-auto my-4 overflow-hidden [&_.slick-slide]:outline-none [&_.slick-dots]:bottom-4">
             <Slider {...settings}>
-                <div>
-                    <img src={arr[0]} alt="slides" />
-                </div>
-                <div>
-                    <img src={arr[1]} alt="slides" />
-                </div>
-                <div>
-                    <img src={arr[2]} alt="slides" />
-                </div>
-                <div>
-                    <img src={arr[3]} alt="slides" />
-                </div>
-                <div>
-                    <img src={arr[4]} alt="slides" />
-                </div>
+                {arr.map((src, index) => (
+                    <div key={index} className="px-1">
+                        <img
+                            src={src}
+                            alt={`Slide ${index + 1}`}
+                            className="w-full h-[45vh] sm:h-[50vh] md:h-[55vh] object-cover rounded-lg"
+                            draggable={false}
+                        />
+                    </div>
+                ))}
             </Slider>
         </div>
     )

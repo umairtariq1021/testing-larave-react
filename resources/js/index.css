@@ -29,6 +29,28 @@
     position: relative;
 }
 
+/* react-slick: keep track clipped and controls above slides */
+.slick-slider {
+    position: relative;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-slide > div {
+    line-height: 0;
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 10;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+}
+
 /* Width */
 .scroll-container::-webkit-scrollbar, body::-webkit-scrollbar {
     width: 0; /* Thinner width for vertical scrollbar */
